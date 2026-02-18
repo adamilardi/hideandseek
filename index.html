@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hide & Seek: Annoying Kids Edition</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="layout">
+    <aside class="panel">
+      <h1>Hide & Seek 🕵️‍♂️</h1>
+      <p class="tagline">Top-down cartoon chaos in one house.</p>
+
+      <div class="control-group">
+        <label for="difficulty">Difficulty</label>
+        <select id="difficulty">
+          <option value="easy">Easy</option>
+          <option value="normal" selected>Normal</option>
+          <option value="hard">Hard</option>
+        </select>
+      </div>
+
+      <button id="startRound">Start Round</button>
+      <button id="runToggle">Run: OFF (Shift)</button>
+      <button id="toolButton" disabled>Use Tool (R)</button>
+
+      <section class="status">
+        <h2>Status</h2>
+        <p id="phaseLabel">Phase: Setup</p>
+        <p id="timerLabel">Time: 60</p>
+        <p id="foundLabel">Found: 0 / 7</p>
+        <p id="staminaLabel">Stamina: 100</p>
+        <p id="seekerLabel">Seeker: Player 2</p>
+        <p id="hintLabel">Hint: Waiting for giggles…</p>
+      </section>
+
+      <section>
+        <h2>Kids</h2>
+        <ul id="kidsList"></ul>
+      </section>
+
+      <section>
+        <h2>How to Play</h2>
+        <ol>
+          <li>Hide phase (60s): click rooms to place each kid.</li>
+          <li>Seek phase (120s): move with WASD/Arrows, hold Shift to run.</li>
+          <li>Run too long and you get tired (speed penalty).</li>
+          <li>Open doors with <strong>E</strong> and inspect with <strong>Space</strong>.</li>
+        </ol>
+      </section>
+    </aside>
+
+    <section class="game-area">
+      <canvas id="gameCanvas" width="900" height="600"></canvas>
+    </section>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>

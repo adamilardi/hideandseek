@@ -1,0 +1,67 @@
+:root {
+  --bg: #20263c;
+  --panel: #2f395c;
+  --accent: #ffd166;
+  --good: #66d19e;
+  --bad: #ff6f59;
+  --text: #f7f9ff;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top, #334070, var(--bg));
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  min-height: 100vh;
+}
+
+.panel {
+  padding: 1rem;
+  background: linear-gradient(#37446f, #293152);
+  border-right: 4px solid #1f2640;
+  overflow-y: auto;
+}
+
+h1,h2 { margin: 0.5rem 0; }
+.tagline { margin-top: 0; color: #fcd86a; }
+.control-group, button { margin: 0.5rem 0; width: 100%; }
+label { display: block; margin-bottom: 0.25rem; }
+select, button {
+  width: 100%;
+  padding: 0.55rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+}
+button {
+  background: var(--accent);
+  color: #222;
+  cursor: pointer;
+}
+button:disabled { opacity: .6; cursor: not-allowed; }
+.status p { margin: .35rem 0; }
+
+.game-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+#gameCanvas {
+  max-width: 100%;
+  border: 6px solid #151a2c;
+  border-radius: 14px;
+  background: #8ec6ff;
+  box-shadow: 0 15px 45px rgba(0,0,0,.45);
+}
+
+ul { padding-left: 1.1rem; }
+li.found { color: var(--good); text-decoration: line-through; }
+li.hidden { color: #f9df72; }
